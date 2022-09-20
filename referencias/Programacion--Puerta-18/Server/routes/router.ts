@@ -6,21 +6,28 @@ let socies: Array<Socie> = [
         nombre: 'Nahuel',
         apellido: 'Heredia',
         nick: "N4hu3l",
-        edad: 22,
+        nacimiento: 1999,
+    },
+
+    {
+        nombre: 'Alejandro',
+        apellido: 'Aracri',
+        nick: "AleStringer",
+        nacimiento: 2000,
     },
 
     {
         nombre: 'Irina',
         apellido: 'Davico',
         nick: 'Ir1n4',
-        edad: 21,
+        nacimiento: 2000,
     },
 
     {
         nombre: 'John',
         apellido: 'Maza',
         nick: 'J0hny',
-        edad: 20,
+        nacimiento: 2001,
     }
 
 ];
@@ -34,7 +41,7 @@ router.get('/socies', (req: Request, res: Response) => {
 });                    
 
 router.get('/socie/:nick', (req: Request, res: Response) => {
-    let ficha:Socie= {nombre: "", apellido: "", nick:"", edad:0};
+    let ficha:Socie= {nombre: "", apellido: "", nick:"", nacimiento:0};
 
     socies.forEach(socie => {
         if (socie.nick === req.params.nick){
